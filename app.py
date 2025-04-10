@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
-import joblib
 import numpy as np
+import pickle 
 
 # Load the trained model
-model = joblib.load('churn_model.pkl')
+with open('churn_model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 # Streamlit app title
 st.title('Customer Churn Prediction')
